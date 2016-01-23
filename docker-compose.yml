@@ -1,0 +1,13 @@
+app:
+  build: .
+  command: /bin/sh
+  volumes:
+    - .:/app
+  ports:
+    - "3020:3020"
+  links:
+    - postgres
+postgres:
+  image: postgres:9.4
+  ports:
+    - "5432"
